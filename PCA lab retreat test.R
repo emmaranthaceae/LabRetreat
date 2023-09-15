@@ -27,8 +27,8 @@
 #                         Plots generated:
 #                         1. PCA of all species' soil samples, excluding greenhouse study soils
 #                         2. PCA of all species' soil samples excluding LJJ and gh soils
-#                         3. PCA of all species soil samples, but plotted w/color and ellipses 
-#                         according to study site soils were collected from
+#                         3. PCA of all species soil samples, but plotted acccording to study 
+#                         site soils were collected from
 
 
 # Data required:         The data files:  R_master_clean_p.xlsx
@@ -194,6 +194,7 @@ PC1plot <- ggplot(mydata, mapping = aes(x = PC1, y = origin)) +
   scale_y_discrete(labels = labspecies, limits=rev) 
 
 PC1plot
+
 #to save:
 #ggsave("PC1plotfinal.png", width = 8, height = 4.5, dpi = 1200)
 
@@ -210,7 +211,8 @@ PC2plot
 #ggsave("PC2plotfinal.png", width = 8, height = 4.5, dpi = 1200)
 
 
-#check assumptions:
+#check assumptions and see if variance, means of species' soils differed in 
+#their PC coordinate means and the variance in their PC coordinates:
 pc1comps <- lm(PC1 ~ origin, data = mydata)
 pc2comps <- lm(PC2 ~ origin, data = mydata)
 
